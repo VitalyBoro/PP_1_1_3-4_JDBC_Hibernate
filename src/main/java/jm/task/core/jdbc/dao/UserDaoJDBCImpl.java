@@ -23,11 +23,8 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Table was created");
         } catch (SQLException e) {
             System.out.println(e);
-
         }
-
-
-    }
+        }
 
     public void dropUsersTable() {
         String commandDropTable = "DROP TABLE IF EXISTS users";
@@ -36,7 +33,6 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Table was deleted");
         } catch (SQLException e) {
             System.out.println(e);
-
         }
     }
 
