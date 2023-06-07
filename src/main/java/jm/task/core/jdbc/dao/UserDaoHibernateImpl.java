@@ -58,8 +58,6 @@ public class UserDaoHibernateImpl implements UserDao {
             Session session = factory.getCurrentSession();
             transaction = session.beginTransaction();
             session.save(us);
-            //long myId = us.getId();
-            //User user = session.get(User.class, myId);
             transaction.commit();
         } catch (Exception e) {
             if(transaction != null){
@@ -93,7 +91,7 @@ public class UserDaoHibernateImpl implements UserDao {
         try {
             Session session = factory.getCurrentSession();
             transaction = session.beginTransaction();
-            userList = session.createQuery("from User").getResultList();
+            userList = session.createQuery("from User.class").getResultList();
             transaction.commit();
         } catch (Exception e) {
             if(transaction != null){
